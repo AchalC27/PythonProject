@@ -2,11 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from string import ascii_uppercase
 import random
-
-
-word_list= ['MUMBAI','DELHI','BANGLORE','HYDRABAD','AHMEDABAD','CHENNAI','KOLKATA','SURAT','PUNE','JAIPUR','AMRITSAR','ALLAHABAD','RANCHI',
-            'LUCKNOW','KANPUR','NAGPUR','INDORE','THANE','BHOPAL','PATNA','GHAZIABAD','AGRA','FARIDABAD','MEERUT','RAJKOT','VARANASI','SRINAGAR',
-            'RAIPUR','KOTA','JHANSI']
+from words import *
 
 window = Tk()
 window.title('Hangman')
@@ -24,9 +20,10 @@ def newGame():
     global the_word_withSpaces
     global numberOfGuesses
     numberOfGuesses = 0
-    the_word = random.choice(word_list)
-    the_word_withSpaces = " ".join(the_word)
-    lblWord.set(' '.join("_" * len(the_word)))
+    word = random.choice(word_list)
+    word = word.upper()
+    the_word_withSpaces = " ".join(word)
+    lblWord.set(' '.join("_" * len(word)))
     imgLabel.config(image=photos[0])  
 
 def guess(letter):
