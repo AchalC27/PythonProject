@@ -9,12 +9,9 @@ window.title('Hangman')
 window.geometry('450x600')
 window.configure(bg='LightBlue')  
 
-photos = [PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang0.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang1.png").subsample(4),
-          PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang2.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang3.png").subsample(4),
-          PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang4.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang5.png").subsample(4),
-          PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang6.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang7.png").subsample(4),
-          PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang8.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang9.png").subsample(4),
-          PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang10.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang11.png").subsample(4)]
+photos = [PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang0.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang1.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang2.png").subsample(4), 
+        PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang3.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang4.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang5.png").subsample(4),
+        PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang6.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang7.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang8.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang9.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang10.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang11.png").subsample(4)]
 
 def newGame():
     global the_word_withSpaces
