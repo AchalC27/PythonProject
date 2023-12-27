@@ -9,10 +9,10 @@ window.title('Hangman')
 window.geometry('450x600')
 window.configure(bg='LightBlue')  
 
-photos = [PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang0.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang1.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang2.png").subsample(4), 
-        PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang3.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang4.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang5.png").subsample(4),
-        PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang6.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang7.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang8.png").subsample(4), 
-        PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang9.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang10.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang11.png").subsample(4)]
+photos = [PhotoImage(file="PythonProject/images/hang0.png").subsample(4), PhotoImage(file="PythonProject/images/hang1.png").subsample(4), PhotoImage(file="PythonProject/images/hang2.png").subsample(4), 
+          PhotoImage(file="PythonProject/images/hang3.png").subsample(4), PhotoImage(file="PythonProject/images/hang4.png").subsample(4), PhotoImage(file="PythonProject/images/hang5.png").subsample(4), 
+          PhotoImage(file="PythonProject/images/hang6.png").subsample(4), PhotoImage(file="PythonProject/images/hang7.png").subsample(4), PhotoImage(file="PythonProject/images/hang8.png").subsample(4), 
+          PhotoImage(file="PythonProject/images/hang9.png").subsample(4), PhotoImage(file="PythonProject/images/hang10.png").subsample(4), PhotoImage(file="PythonProject/images/hang11.png").subsample(4)]
 
 def newGame():
     global the_word_withSpaces
@@ -33,10 +33,10 @@ def guess(letter):
             for c in range(len(txt)):
                 if txt[c] == letter:
                     guessed[c] = letter
-                lblWord.set("".join(guessed))
-                if lblWord.get() == the_word_withSpaces:
-                    messagebox.showinfo("Hangman", "You guessed it!")
-                    animate_win()
+            lblWord.set("".join(guessed))
+            if lblWord.get() == the_word_withSpaces:
+                messagebox.showinfo("Hangman", "You guessed it!")
+                animate_win()
         else:
             numberOfGuesses += 1
             imgLabel.config(image=photos[numberOfGuesses])
@@ -75,10 +75,10 @@ Label(window, textvariable=lblWord, font=('consolas 24 bold'), bg='LightBlue', f
 
 n = 0
 for c in ascii_uppercase:
-    Button(window, text=c, command=lambda c=c: guess(c), font=('Helvetica 18', 15), width=6, height=2, bg='Gold1').grid(row=1 + n // 6, column=n % 6)
+    Button(window, text=c, command=lambda c=c: guess(c), font=('Helvetica 18', 15), width=6, height=2, bg="Gold1").grid(row=2 + n // 6, column=n % 6, sticky=W)
     n += 1
 
-Button(window, text="New Game", command=lambda: newGame(), font=("Helvetica 10 bold"),width=20,height=2, activebackground='goldenrod4',activeforeground='white', bg='Gold1').grid(row=5, column=2, columnspan=3, pady=10)
+Button(window, text="New Game", command=lambda: newGame(), font=("Helvetica 10 bold"), width=12, height=2, bg="Gold1").grid(row=6, column=2, columnspan=3, pady=10)
 
 newGame()
 
