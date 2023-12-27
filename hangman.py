@@ -2,13 +2,12 @@ from tkinter import *
 from tkinter import messagebox
 from string import ascii_uppercase
 import random
+from words import word_list
 
 window = Tk()
 window.title('Hangman')
 window.geometry('450x600')
 window.configure(bg='LightBlue')  
-
-word_list = ['MUMBAI', 'DELHI', 'BANGLORE', 'HYDERABAD', 'AHMEDABAD', 'CHENNAI', 'KOLKATA', 'SURAT', 'PUNE', 'JAIPUR', 'AMRITSAR', 'ALLAHABAD', 'RANCHI', 'LUCKNOW', 'KANPUR', 'NAGPUR', 'INDORE', 'THANE', 'BHOPAL', 'PATNA', 'GHAZIABAD', 'AGRA', 'FARIDABAD', 'MEERUT', 'RAJKOT', 'VARANASI', 'SRINAGAR', 'RAIPUR', 'KOTA', 'JHANSI']
 
 photos = [PhotoImage(file="Hangmanfork_1/images/hang0.png").subsample(4), PhotoImage(file="Hangmanfork_1/images/hang1.png").subsample(4), PhotoImage(file="Hangmanfork_1/images/hang2.png").subsample(4), PhotoImage(file="Hangmanfork_1/images/hang3.png").subsample(4),
 PhotoImage(file="Hangmanfork_1/images/hang4.png").subsample(4), PhotoImage(file="Hangmanfork_1/images/hang5.png").subsample(4),
