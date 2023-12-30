@@ -3,16 +3,37 @@ from tkinter import messagebox
 from string import ascii_uppercase
 import random
 from words import *
+from tkinter import PhotoImage
 
 window = Tk()
 window.title('Hangman')
 window.geometry('450x600')
 window.configure(bg='LightBlue')  
 
-photos = [PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang0.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang1.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang2.png").subsample(4), 
-        PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang3.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang4.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang5.png").subsample(4),
-        PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang6.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang7.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang8.png").subsample(4), 
-        PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang9.png").subsample(4),PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang10.png").subsample(4), PhotoImage(file="D:/Python/HangMan/PythonProject/images/hang11.png").subsample(4)]
+image_width = 500
+image_height = 600
+
+
+image_paths = [
+    "HangMan/PythonProject/images/hang0.png",
+    "HangMan/PythonProject/images/hang1.png",
+    "HangMan/PythonProject/images/hang2.png",
+    "HangMan/PythonProject/images/hang3.png",
+    "HangMan/PythonProject/images/hang4.png",
+    "HangMan/PythonProject/images/hang5.png",
+    "HangMan/PythonProject/images/hang6.png",
+    "HangMan/PythonProject/images/hang7.png",
+    "HangMan/PythonProject/images/hang8.png",
+    "HangMan/PythonProject/images/hang9.png",
+    "HangMan/PythonProject/images/hang10.png",
+    "HangMan/PythonProject/images/hang11.png"
+]
+
+photos = [
+    PhotoImage(file=image_path, width=image_width, height=image_height).subsample(4)
+    for image_path in image_paths
+]
+
 
 def newGame():
     global the_word_withSpaces
@@ -44,7 +65,7 @@ def guess(letter):
             if numberOfGuesses == 11:
                 messagebox.showwarning("Hangman", "Game Over")
                 animate_loss()
-
+    
 animation_speed = 100  
 current_frame = 0
 def animate_win():
@@ -75,10 +96,10 @@ Label(window, textvariable=lblWord, font=('consolas 24 bold'), bg='LightBlue', f
 
 n = 0
 for c in ascii_uppercase:
-    Button(window, text=c, command=lambda c=c: guess(c), font=('Helvetica 18', 15), width=6, height=2, bg='Gold1').grid(row=1 + n // 6, column=n % 6)
+    Button(window, text=c, command=lambda c=c: guess(c), font=('Helvetica 18', 15), width=6, height=2, bg="Gold1").grid(row=2 + n // 6, column=n % 6, sticky=W)
     n += 1
 
-Button(window, text="New Game", command=lambda: newGame(), font=("Helvetica 10 bold"),width=20,height=2, activebackground='goldenrod4',activeforeground='white', bg='Gold1').grid(row=5, column=2, columnspan=3, pady=10)
+Button(window, text="New Game", command=lambda: newGame(), font=("Helvetica 10 bold"), width=15, height=2, bg="Gold1").grid(row=6, column=2, columnspan=3, pady=10)
 
 newGame()
 
